@@ -4,6 +4,9 @@ In the project directory, you can run:
 ### `npm start`
 
 TODOs: 
-	componentize reusable elements (inputs, containers)
+
+	componentize reusable elements (inputs, containers) 
+	
 	reorganize structure
+
 	re-use styles and effects
