@@ -1,0 +1,25 @@
+.scrolleable-container {
+    overflow: auto;
+    max-height: 500px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    position: absolute;
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0f225e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(104, 96, 96);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

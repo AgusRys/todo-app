@@ -1,0 +1,22 @@
+.create-task__button {
+    width: 50%;
+    background-color: #0f225e;
+    color: white;
+    height: 2.5em;
+    border: none;
+    border-radius: 8px;
+}
+
+.create-task__button:hover {
+    /* background-color: #92e2f9; */
+    background-color: #5ddafe;
+    color: #0f225e;
+    cursor: pointer;
+}
+
+.create-task__button:active {
+    /* color: #0f225e; */
+    /* background-color: #5ddafe; */
+    background-color: #92e2f9;
+    font-weight: 550;
+}

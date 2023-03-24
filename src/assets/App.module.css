@@ -1,0 +1,77 @@
+.main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5em;
+}
+
+
+.tasks-container {
+    background: #061239de;
+    -webkit-backdrop-filter: blur(35px);
+    backdrop-filter: blur(35px);
+    padding: 50px;
+    border-radius: 20px;
+    min-height: 30em;
+    max-height: 43em;
+    min-width: 21.875rem;
+    max-width: 27rem;
+
+}
+
+/* .tasks-container:hover {
+    background-color: #000824de;
+} */
+
+.tasks-container button {
+    border-radius: 50%;
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+    top: -30px;
+    left: 95%;
+    background-color: #ff81002b;
+    border: none;
+
+}
+
+.tasks-container button:hover {
+    background-color: #0f215e5e;
+    cursor: pointer;
+}
+
+.tasks-container button:active {
+    background-color: #ffa447;
+}
+
+.tasks-container h6 {
+    color: white;
+    margin: 0;
+}
+
+.tasks-container h3 {
+    color: #ffa447;
+}
+
+.container-empty-tasks {
+    background-color: #061239;
+    height: 4em;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    margin-top: 2em;
+}
+
+
+
+
+
+
+
+
+

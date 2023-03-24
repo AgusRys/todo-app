@@ -1,0 +1,112 @@
+.container {
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(35px);
+    backdrop-filter: blur(35px);
+    /* margin: auto; */
+    height: 40em;
+    width: 25em;
+    box-shadow: 0px 13px 60px 0px rgba(53, 122, 145, 0.6);
+    -webkit-box-shadow: 0px 13px 60px 0px rgba(53, 122, 145, 0.6);
+    -moz-box-shadow: 0px 13px 60px 13px rgba(53, 122, 145, 0.6);
+    border-radius: 20px;
+    padding: 4em;
+    position: relative;
+}
+
+
+.container h3 {
+    /* margin: 0; */
+    font-size: 3em;
+    color: #0f225e;
+}
+
+.container h3 span {
+    /* color: #92e2f9; */
+    color: #5ddafe;
+}
+
+.container h6 {
+    font-size: 1.1em;
+    margin: 0;
+    color: #0f225e;
+}
+
+
+.input-create-task {
+    border: none;
+    width: 100%;
+    height: 2.5em;
+    border-radius: 8px;
+    margin: 0.8em 0;
+    text-align: center;
+    caret-color: #ffa447;
+    color: #ffa447;
+    text-transform: uppercase;
+}
+
+.input-create-task:focus-visible {
+    outline: none;
+}
+
+.input-create-task::placeholder {
+    color: rgba(0, 0, 0, 0.138);
+}
+
+
+
+.empty-input-error {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    background-color: #ffa447;
+    width: 10em;
+    padding: .2em;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: .8em;
+    color: white;
+    opacity: 0;
+    animation: movein 0.2s ease forwards;
+    /* moveout .8s 1.5s ease forwards; */
+}
+
+
+
+.input-create-task:invalid~.empty-input-error {
+    animation: movein .5s ease forwards;
+}
+
+/* .container:has(button:focus)>.empty-input-error {
+    animation: movein 1s ease forwards
+} */
+
+.container:has(input:focus) form .empty-input-error {
+    animation: moveout .5s ease forwards;
+}
+
+
+
+@keyframes movein {
+    from {
+        top: 48%;
+
+    }
+
+    to {
+        top: 43%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveout {
+    from {
+        top: 43%;
+        opacity: 1;
+    }
+
+    to {
+        top: 48%;
+
+    }
+}

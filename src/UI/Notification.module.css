@@ -1,0 +1,35 @@
+.notification-container {
+    position: absolute;
+    /* top: -200%; */
+    left: 45%;
+    width: 200px;
+    height: 2em;
+    background-color: #0f225e;
+    color: white;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    animation: movein 0.2s ease forwards, moveout .8s 1.5s ease forwards;
+}
+
+@keyframes movein {
+    from {
+        top: -200px;
+    }
+
+    to {
+        top: 10px;
+    }
+}
+
+@keyframes moveout {
+    from {
+        top: 10px;
+    }
+
+    to {
+        top: -200px;
+    }
+}
