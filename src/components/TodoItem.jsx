@@ -1,79 +1,11 @@
-// import React, {useState} from 'react';
-// import Modal from '../UI/Modal'
-// import styles from '../assets/TodoItem.module.css';
-// import Edit from '../assets/images/Edit';
-// // import './input.css';
-// // import styles from './input.module.css';
-
-// const TodoItem = (props) => {
-//     const [displayModal, setDisplayModal] = useState(null)
-//     const [mainContentModal, setMainContentModal] = useState()
-
-//     const checkStatus = (task, event) => {
-//         const currentTaskId = task.id;
-//         const taskIsChecked = event.target.checked;
-
-//         props.onComplete(currentTaskId, taskIsChecked);
-//     }
-//     const hideModal = () => {
-//         setDisplayModal(null);
-//     }
-
-//     const deleteTask = (task, ev) => {
-//         console.log('aasdasdasdadsasdads' + Object.keys(ev))
-//         setDisplayModal(true);
-//         setMainContentModal(task.title)
-//     }
-//     const editTask = (task, ev) => {
-//         console.log('aasdasdasdadsasdads' + ev)
-//         setDisplayModal(true);
-
-//         setMainContentModal(
-//             <input type={'text'}></input>
-//         )
-//     }
-
-//     const confirmDeleteTask = (task) => {
-//         // TODO: esto va cuando el usuario acepta eliminar el todo->
-//         props.onDelete(task.id)
-//     }
-
-
-//     return (
-//         <li className={`${props.todo.complete && !props.displayCompletedTasks ? styles['display-none'] : styles['display-list']}  ${styles.slideInLeft}` }>
-//            <div className={` ${styles["checkbox-wrapper"]} `}>
-//                 <input id={styles["checkbox-input"]} type="checkbox"  onChange={checkStatus.bind(this, props.todo)} />
-//                 <label htmlFor="checkbox-input">{props.todo.title}</label>
-//             </div>
-//             <div>
-//                 <div className={styles.edit}  onClick={editTask.bind(this, props.todo)}><Edit/></div>
-//                 <div className={styles.cross} onClick={deleteTask.bind(this, props.todo)}>x</div>
-//             </div>
-//             {displayModal && 
-//                 <Modal 
-//                     mainContent={mainContentModal} 
-//                     onDecline={hideModal}
-//                     onConfirm={confirmDeleteTask.bind(this, props.todo)}> {/* onConfirm={ algo ? confirmDeleteTask.bind(this, props.todo)} : confirmEditTask.bind(this, props.todo) > */}
-//                         <h1>holaaa</h1> 
-//                         {/* MAIN CONTENT */}
-//                 </Modal>}
-//         </li>
-//     )
-// }
-
-// export default TodoItem;
-
-
 import React, { useState, useReducer, useRef } from 'react';
 import Modal from '../UI/Modal'
 import styles from '../assets/TodoItem.module.css';
 import Edit from '../assets/images/Edit';
-// import './input.css';
-// import styles from './input.module.css';
 
 const TodoItem = (props) => {
     const [displayModal, setDisplayModal] = useState(null)
-    
+
     const editedContent = useRef('')
 
     const confirmDeleteTask = (taskId) => {
@@ -158,13 +90,13 @@ const TodoItem = (props) => {
                 <div className={styles.edit}  onClick={editTaskFunctionHandler.bind(this, props.todo)}><Edit /></div>
                 <div className={styles.cross} onClick={deleteTaskFunctionHandler.bind(this, props.todo)}>x</div>
             </div>
-            {displayModal &&
-                <Modal
+            {   displayModal && <Modal
                     titleContent = {state.title}
                     onDecline    = {state.declineFunction}
                     onConfirm    = {state.confirmFunction}>
                         {state.content}
-                </Modal>}
+                </Modal>
+            }
       
         </li>
     )

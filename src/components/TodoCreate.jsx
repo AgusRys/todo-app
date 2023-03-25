@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
 import styles from '../assets/TodoCreate.module.css'
 import TodoButton from './TodoButton'
+import TodosContext from '../context/todos-context'
 
-const TodoCreate = (props) => {
+const TodoCreate = () => {
+    const todosCtx = useContext(TodosContext)
     const [newTask, setNewTask] = useState('');
     const [displayError, setDisplayError] = useState(false);
 
@@ -20,7 +22,7 @@ const TodoCreate = (props) => {
             return
         }
         setDisplayError(false);
-        props.onCreateNewTask(newTask.toUpperCase());
+        todosCtx.createNewTask(newTask.toUpperCase());
         setNewTask('');
     }
 
