@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import TodoList from "../components/TodoList"
+import EmptyTodoItem from '../components/EmptyTodoItem';
 
 const TodoContext = React.createContext({
         todos: [],
@@ -8,6 +10,7 @@ const TodoContext = React.createContext({
         displayNotification: false,
         notificationMessage: '',
         displayCompletedTasks: false,
+        tasksContainerItems: '',
         completeTask: (todoCheckedId, todoIsChecked) => {},
         showCompletedTasks: () => {},
         createNewTask: (newTask) => {},
@@ -102,6 +105,9 @@ export const TodoContextProvider = (props) => {
         }, 3000);
     }
 
+    let tasksContainerItems = todos.length > 0 ? <TodoList /> : <EmptyTodoItem/>
+
+
     return <TodoContext.Provider value={{
         todos: todos,
         counterComplete: counterComplete,
@@ -110,6 +116,7 @@ export const TodoContextProvider = (props) => {
         displayNotification: displayNotification,
         notificationMessage: notificationMessage,
         displayCompletedTasks: displayCompletedTasks,
+        tasksContainerItems: tasksContainerItems,
         completeTask: completeTask,
         showCompletedTasks: showCompletedTasks,
         createNewTask: createNewTask,

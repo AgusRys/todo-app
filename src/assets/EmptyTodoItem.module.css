@@ -1,0 +1,10 @@
+.container-empty-tasks {
+    background-color: #061239;
+    height: 4em;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    margin-top: 2em;
+}
