@@ -1,12 +1,15 @@
 First practice of an app made with react
+https://agusrys.github.io/todos-app/
 
 In the project directory, you can run:
 ### `npm start`
 
-TODOs: 
+PENDING: 
 
-	componentize reusable elements (inputs, containers) 
+	componentize reusable elements (ie: inputs, buttons, containers) 
 	
-	reorganize structure
+	reorganize structure 
 
-	re-use styles and effects
+	re-use styles and css effects
+	
+	handle the edit/delete notification with css only 
